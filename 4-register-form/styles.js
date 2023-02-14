@@ -31,9 +31,36 @@ header:{
 headerText:{
     color:"#fff",
     fontSize:18,
-}
-
-
-
-
+},
+content:{
+    padding:20,
+    backgroundColor: CONTENT_BACKGROUND,
+},
+formGroup:{
+    marginBottom:10,
+},
+label:{
+    color:"#7d7e79",
+    fontSize:16,
+    lineHeight:30,
+},
+input:{
+    height:50,
+    paddingHorizontal: 20,
+    borderRadius:5,
+    borderWidth:2,
+    borderColor:"#fff",
+},
+button:{
+    marginTop: 20,
+    backgroundColor: "#2980b9",
+    padding:15,
+    borderRadius: 15,
+},
+buttonText:{
+    color:"#fff",
+    fontWeight:"bold",
+    fontSize: 18,
+    textAlign:"center"
+},
 })
