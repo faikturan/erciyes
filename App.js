@@ -4,6 +4,7 @@ import TheLight from './2-the-light/TheLight';
 import FacebookLogin from './3-login-page/FacebookLogin';
 import MomoLogin from './3-login-page/MomoLogin';
 import RegisterForm from './4-register-form/RegisterForm';
+import Instagram from './5-instagram-feed/InstagramFeed';
 
 export default function App() {
  //return <HelloWorld1 />
@@ -11,5 +12,6 @@ export default function App() {
  //return <TheLight />
  //return <MomoLogin />
  //return <FacebookLogin />
- return <RegisterForm />
+ //return <RegisterForm />
+ return <Instagram />
 }

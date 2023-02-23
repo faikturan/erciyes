@@ -5,7 +5,8 @@ ViewStyle,
 View,
 TouchableOpacity,
 Text,
-Image} from "react-native";
+Image,
+StyleSheet} from "react-native";
 
 import { Feather } from "@expo/vector-icons"
 
