@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, StyleSheet } from 'react-native'
+import { TouchableOpacity, StyleSheet, View, Text } from 'react-native'
 
 export default function Control({
     isRunning,

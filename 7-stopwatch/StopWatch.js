@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react'
-import { SafeAreaView, StyleSheet, View, SafeAreaView, Text, Platform} from "react-native";
+import { SafeAreaView, StyleSheet, View, Text, Platform} from "react-native";
 import Control from './Control';
 import Result from './Result';
 import { displayTime } from './util';

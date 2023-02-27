@@ -5,7 +5,7 @@ const addZeroBefore = (time) =>{
     return "" + time
 };
 
-export const displayTime = (centisecond){
+export const displayTime = (centisecond) => {
     let minutes = 0;
     let seconds = 0;
 
