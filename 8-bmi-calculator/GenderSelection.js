@@ -15,7 +15,8 @@ export default function GenderSelection({ style, gender, setGender}) {
     onPress={() => setGender("male")}>
 
     <FontAwesome5 name="mars" size={80} color="#51caef" />
-    <Text style={styles.genderSelectionText}>MALE</Text>
+    <Text
+     style={styles.genderSelectionText}>MALE</Text>
     </TouchableOpacity>
 
 
@@ -35,5 +36,17 @@ export default function GenderSelection({ style, gender, setGender}) {
 }
 
 const styles = StyleSheet.create({
-
-})
+genderSelection:{
+  ...ROW,
+},
+genderBox:{
+  ...CENTER,
+  ...BOX,
+  margin: 15,
+  marginTop: 0,
+},
+genderSelectionText: {
+  ...TEXT_LABEL,
+  marginTop: 10,
+},
+});
