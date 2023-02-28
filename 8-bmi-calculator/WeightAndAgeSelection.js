@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { View, StyleSheet } from 'react-native';
-
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { FontAwesome5 } from "@expo/vector-icons";
 import { BOX, ROW, CENTER, TEXT_LABEL, TEXT_VALUE } from "./style";
 
 const MIN_WEIGHT = 10;
@@ -84,11 +84,91 @@ export default function WeightAndAgeSelection({
 
   return (
     <View style={style}>
+        <View style={styles.WeightAndAgeSelection}>
+            <View style={styles.weightAndAgeBox}>
+                <Text style={styles.label}>WEIGHT</Text>
 
+                <Text style={styles.value}>{weight}</Text>
+
+                <View style={styles.weightAndAgeButtonGroup}>
+                    <TouchableOpacity
+                    style={styles.weightAndAgeButton}
+                    onPress={decreaseWeight}
+                    onLongPress={() => fastChangeValue("weight", false)}
+                    onPressOut={clearTimer}>
+
+                    <FontAwesome5 name="minus" size={20} color={"#fff"} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                    style={styles.weightAndAgeButton}
+                    onPress={increaseWeight}
+                    onLongPress={() => fastChangeValue("weight", true)}
+                    onPressOut={clearTimer}>
+
+                    <FontAwesome5 name="plus" size={20} color={"#fff"} />
+                    </TouchableOpacity>
+                </View>
+            </View>
+
+
+            <View style={styles.weightAndAgeBox}>
+                <Text style={styles.label}>AGE</Text>
+
+                <Text style={styles.value}>{age}</Text>
+
+                <View style={styles.weightAndAgeButtonGroup}>
+                    <TouchableOpacity
+                    style={styles.weightAndAgeButton}
+                    onPress={decreaseAge}
+                    onLongPress={() => fastChangeValue("age", false)}
+                    onPressOut={clearTimer}>
+
+                    <FontAwesome5 name="minus" size={20} color={"#fff"} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                    style={styles.weightAndAgeButton}
+                    onPress={increaseAge}
+                    onLongPress={() => fastChangeValue("age", true)}
+                    onPressOut={clearTimer}>
+
+                    <FontAwesome5 name="plus" size={20} color={"#fff"} />
+                    </TouchableOpacity>
+                </View>
+
+            </View>
+
+        </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-
+    WeightAndAgeSelection:{
+        ...ROW,
+    },
+    weightAndAgeBox:{
+        ...CENTER,
+        ...BOX,
+        margin: 15,
+    },
+    label:{
+        ...TEXT_LABEL,
+    },
+    value:{
+        ...TEXT_VALUE,
+    },
+    weightAndAgeButtonGroup:{
+        flexDirection: "row",
+        width: "100%",
+        justifyContent: "space-around",
+    },
+    weightAndAgeButton:{
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: "#5e606e",
+        ...CENTER,
+    },
 });
