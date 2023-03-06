@@ -7,6 +7,7 @@ import RegisterForm from './4-register-form/RegisterForm';
 import Instagram from './5-instagram-feed/InstagramFeed';
 import RockPaperScissors from './6-rock-paper-scissors/RockPaperScissors';
 import StopWatch from './7-stopwatch/StopWatch';
+import BMICalculator from './8-bmi-calculator/BMICalculator';
 
 export default function App() {
  //return <HelloWorld1 />
@@ -17,5 +18,6 @@ export default function App() {
  //return <RegisterForm />
  //return <Instagram />
  //return <RockPaperScissors />
- return <StopWatch />
+ //return <StopWatch />
+ return <BMICalculator />
 }

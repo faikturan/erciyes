@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import Constants from  "expo-constants";
 import { CENTER, TEXT, BUTTON, BUTTON_TEXT } from './style';
-import { Platform, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
+import { Platform, SafeAreaView, StatusBar, TouchableOpacity, StyleSheet, View, Text } from 'react-native';
 import GenderSelection from "./GenderSelection";
 import HeightSelection from "./HeightSelection";
 import WeightAndAgeSelection from "./WeightAndAgeSelection"
 import ResultModal from "./ResultModal";
 
-const BMI_ADULT_TABLE = [];
 
 export default function BMICalculator() {
     const [gender, setGender] = useState("male");
@@ -21,7 +20,7 @@ export default function BMICalculator() {
 
     function calculate(){
         const point = weight / (height / 100) ** 2;
-
+    
         if(point < 18.5){
             setBmiStatus("UNDERWEIGHT");
             setBmiInterpretation(
@@ -35,11 +34,10 @@ export default function BMICalculator() {
                 setBmiInterpretation(
                     "You have a higher than normal body weight.\nTry to exercise more.");
             }
-
+    
             setBmiPoint(point.toFixed(2));
             setModalVisible(true);
     }
-
 
   return (
     <SafeAreaView style={styles.container}>
@@ -85,7 +83,7 @@ export default function BMICalculator() {
         </View>
 
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({

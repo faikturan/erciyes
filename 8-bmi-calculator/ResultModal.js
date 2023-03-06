@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Modal, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { BOX, TEXT, BUTTON_TEXT, BUTTON } from "./style";
 
 export default function ResultModal({

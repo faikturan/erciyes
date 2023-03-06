@@ -8,14 +8,10 @@ const MAX_WEIGHT = 150;
 const MIN_AGE = 1;
 const MAX_AGE = 150;
 
-export default function WeightAndAgeSelection({
-    style,
-    weight,
-    setWeight,
-    age,
-    setAge
-}) {
+export default function WeightAndAgeSelection({ style }) {
     const [timer, setTimer] = useState(null);
+    const [weight, setWeight] = useState(0);
+    const [age, setAge] = useState(0);
 
     function decreaseWeight(){
         setWeight((value)=> {

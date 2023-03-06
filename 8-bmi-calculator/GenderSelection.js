@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, View, Text } from 'react-native'
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
 import { CENTER, BOX, ROW, TEXT_LABEL } from './style'
 import { FontAwesome5} from "@expo/vector-icons";
 
