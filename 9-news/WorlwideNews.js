@@ -71,18 +71,26 @@ export default function WorlwideNews() {
 
 const styles = StyleSheet.create({
     container:{
-
+        flex: 1,
+        paddingTop: Constants.statusBarHeight,
     },
     content:{
-
+        flex: 1,
+        padding: 15,
     },
     headlines:{
-
+        fontSize: 32,
+        fontWeight: "bold",
+        lineHeight: 50,
+        color: "#e74c3c"
     },
     center:{
-
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
     },
     articleSeparator:{
-
+        borderBottomWidth: 1,
+        borderBottomColor: "#ed7669"
     },
 });
