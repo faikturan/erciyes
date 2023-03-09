@@ -1,5 +1,6 @@
 import HelloWorld1 from './1-HelloWorld/HelloWorld1';
 import HelloWorld2 from './1-HelloWorld/HelloWorld2';
+import NavigateApp from './10-navigation/NavigateApp';
 import TheLight from './2-the-light/TheLight';
 import FacebookLogin from './3-login-page/FacebookLogin';
 import MomoLogin from './3-login-page/MomoLogin';
@@ -21,5 +22,6 @@ export default function App() {
  //return <RockPaperScissors />
  //return <StopWatch />
  //return <BMICalculator />
- return <WorlwideNews />
+ //return <WorlwideNews />
+ return <NavigateApp />
 }
