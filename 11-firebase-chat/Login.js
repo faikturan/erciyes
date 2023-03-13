@@ -67,5 +67,5 @@ input:{
     borderColor: '#333',
     borderRadius: 8,
     padding: 12,
-}
+},
 });
