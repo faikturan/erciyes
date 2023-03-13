@@ -53,13 +53,25 @@ export default function Signup({ navigation }) {
 
 const styles = StyleSheet.create({
     container:{
-
+        flex: 1,
+        backgroundColor: '#fff',
+        paddingTop: 50,
+        paddingHorizontal: 12,
     },
     title:{
-
+        fontSize: 24,
+        fontWeight: '600',
+        color: '#444',
+        alignSelf: 'center',
+        paddingBottom: 24,
     },
     input:{
-
+        backgroundColor: '#fff',
+        marginBottom: 20,
+        fontSize: 16,
+        borderWidth: 1,
+        borderColor: '#333',
+        borderRadius: 8,
+        padding: 12,
     }
-
 });
