@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { onAuthStateChanged } from 'firebase/auth';
-import React, { createContext, useState, useContext} from 'react'
+import React, { createContext, useState, useContext, useEffect} from 'react'
 import { ActivityIndicator, View } from 'react-native';
 import Chat from './Chat';
 import { auth } from './firebase';
@@ -42,7 +42,7 @@ const AuthenticatedUserProvider = ({ children }) => {
 };
 
 function RootNavigator(){
-    const [user, setUser] = useContext(AuthenticatedUserContext);
+    const { user, setUser } = useContext(AuthenticatedUserContext);
     const [isLoading, setIsLoading] = useState(true);
 
 

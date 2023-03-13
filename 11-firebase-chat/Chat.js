@@ -54,7 +54,7 @@ export default function Chat({ navigation }) {
     });
 
     return () => unsubscribe();
-  }, [])
+  }, []);
 
   const onSend = useCallback((messages = []) => {
     setMessages(previousMessages =>

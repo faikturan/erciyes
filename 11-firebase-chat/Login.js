@@ -30,7 +30,7 @@ export default function Login({ navigation }) {
     <TextInput style={styles.input}
       placeholder='Enter password'
       autoCapitalize='none'
-      secureTextEntry='password'
+      secureTextEntry={true}
       autoCorrect={false}
       textContentType='password'
       value={password}
@@ -38,7 +38,7 @@ export default function Login({ navigation }) {
 
     <Button onPress={onHandleLogin} color='#f57c00' title='Login' />
     <Button
-    onPress={()=> navigation.navaigate('Signup')}
+    onPress={()=> navigation.navigate('Signup')}
     title='Go to SignUp' />
     </View>
   )

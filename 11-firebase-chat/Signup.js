@@ -2,7 +2,6 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { auth } from './firebase';
 import { StyleSheet, View, Button, TextInput, Text} from "react-native";
-import { TextInput } from 'react-native-gesture-handler';
 
 
 export default function Signup({ navigation }) {
