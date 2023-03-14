@@ -1,44 +1,50 @@
-import { signOut } from 'firebase/auth';
-import { 
-  addDoc,
-  collection,
-  onSnapshot,
-  orderBy, 
-  query } from 'firebase/firestore';
-import React, { 
+import React, {
   useState,
-   useEffect,
-   useLayoutEffect,
-   useCallback
-   } from 'react'
-import { TouchableOpacity, Text } from 'react-native-gesture-handler';
+  useEffect,
+  useLayoutEffect,
+  useCallback
+} from 'react';
+import { TouchableOpacity, Text } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
+import {
+  collection,
+  addDoc,
+  orderBy,
+  query,
+  onSnapshot
+} from 'firebase/firestore';
+import { signOut } from 'firebase/auth';
+
 import { auth, database } from './firebase';
 
 export default function Chat({ navigation }) {
   const [messages, setMessages] = useState([]);
 
   const onSignOut = () => {
-    signOut(auth).catch(error => console.error('Error logging out: ', error));
+    signOut(auth).catch(error => console.log('Error logging out: ', error));
   };
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity
-        style={{
-          marginRight: 10,
-        }}
-        onPress={onSignOut}>
-        <Text>Logout</Text>
+          style={{
+            marginRight: 10
+          }}
+          onPress={onSignOut}
+        >
+          <Text>Logout</Text>
         </TouchableOpacity>
       )
     });
-  }, [navigation])
+  }, [navigation]);
 
+  // useEffect(() => {
+  //   setMessages([
+
+  // }, []);
 
   useEffect(() => {
-
     const collectionRef = collection(database, 'chats');
     const q = query(collectionRef, orderBy('createdAt', 'desc'));
 
@@ -58,26 +64,26 @@ export default function Chat({ navigation }) {
 
   const onSend = useCallback((messages = []) => {
     setMessages(previousMessages =>
-      GiftedChat.append(previousMessages, messages));
-
-      const { _id, createdAt, text, user } = messages[0];
-      addDoc(collection(database, 'chats'),{
-        _id,
-        createdAt,
-        text,
-        user
-      });
+      GiftedChat.append(previousMessages, messages)
+    );
+    const { _id, createdAt, text, user } = messages[0];
+    addDoc(collection(database, 'chats'), {
+      _id,
+      createdAt,
+      text,
+      user
+    });
   }, []);
-
 
   return (
     <GiftedChat
-    messages={messages}
-    showAvatarForEveryMessage={true}
-    onSend={messages => onSend(messages)}
-    user={{
-      _id: auth?.currentUser?.email,
-      avatar: 'https://avatars.githubusercontent.com/u/10234615?v=4'
-    }} />
+      messages={messages}
+      showAvatarForEveryMessage={true}
+      onSend={messages => onSend(messages)}
+      user={{
+        _id: auth?.currentUser?.email,
+        avatar: 'https://avatars.githubusercontent.com/u/10234615?v=4'
+      }}
+    />
   );
 }
