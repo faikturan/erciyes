@@ -15,7 +15,7 @@ import WorlwideNews from './9-news/WorlwideNews';
 export default function App() {
  //return <HelloWorld1 />
  //return <HelloWorld2 />
- //return <TheLight />
+ return <TheLight />
  //return <MomoLogin />
  //return <FacebookLogin />
  //return <RegisterForm />
@@ -25,5 +25,5 @@ export default function App() {
  //return <BMICalculator />
  //return <WorlwideNews />
  //return <NavigateApp />
- return <ChatApp />
+ //return <ChatApp />
 }
