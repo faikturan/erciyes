@@ -63,17 +63,22 @@ const styles =  StyleSheet.create({
         paddingTop: Constants.statusBarHeight,
     },
     image:{
-
+        maxWidth: "100%",
+        maxHeight: screenHeight - Constants.statusBarHeight - 150,
+        resizeMode: "contain",
+        marginBottom: 20,
     },
     buttonGroup:{
-
+        flexDirection: "row",
+        justifyContent: "space-evenly",
     },
     button:{
-
+        width: 80,
+        paddingVertical: 8,
+        justifyContent: "center",
+        alignItems: "center",
     },
     buttonText:{
-
+        color: "#fff",
     },
-
-
-})
+});
