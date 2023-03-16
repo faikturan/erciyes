@@ -4,8 +4,9 @@ import sliderThumbImageIOS from "../assets/music-player/slider-thumb-ios.png";
 import { displayTime } from './util';
 import { styles } from './PlayerModal.style';
 import { PRIMARY_COLOR } from './style';
-import { Modal, SafeAreaView, TouchableOpacity, View } from 'react-native';
+import { Modal, SafeAreaView, TouchableOpacity, View, Image, Text, Platform } from 'react-native';
 import { FontAwesome5 } from "@expo/vector-icons";
+import Slider from '@react-native-community/slider';
 
 
 
@@ -38,9 +39,80 @@ export default function PlayerModal({
             <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
                 <FontAwesome5 name="times" size={20} color="#757575" />
             </TouchableOpacity>
+
+
+            <Image
+            source={{ uri: playingSong.coverImage }}
+            style={styles.coverImage} />
+
+            <Text style={styles.songName}>{playingSong.name}</Text>
+
+            <Text style={styles.singerName}>{playingSong.singer}</Text>
+
+            <View style={styles.progress}>
+                <View style={styles.time}>
+                    <Text style={styles.timeText}>
+                        {displayTime(currentPosition)}
+                    </Text>
+
+                    <Text style={styles.timeText}>
+                        {displayTime(playingSong.duration)}
+                    </Text>
+                </View>
+
+                <Slider
+                style={styles.slider}
+                minimumValue={0}
+                maximumValue={playingSong.duration}
+                minimumTrackTintColor={PRIMARY_COLOR}
+                maximumTrackTintColor="#dfdfdf"
+                tapToSeek={true}
+                thumbImage={
+                    Platform.OS === "ios"
+                    ? sliderThumbImageIOS
+                    : sliderThumbImageAndroid
+                }
+                onValueChange={setCurrentPosition}
+                onSlidingStart={() => setRewinding(true)}
+                onSlidingComplete={updatePosition}
+                value={currentPosition}
+                disabled={isBuffering} />
+            </View>
+
+            <View style={styles.controls}>
+                <TouchableOpacity
+                onPress={() => changeSong(currentPosition - 1)}
+                disabled={isBuffering}>
+
+                <FontAwesome5
+                name="backward"
+                style={[styles.secondaryControlIcon, { opacity }]} />
+
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                onPress={pauseOrResumeSong}
+                disabled={isBuffering}>
+
+                <FontAwesome5
+                name={isPlaying ? "pause-circle" : "play-circle"}
+                style={[styles.primaryControlIcon, { opacity }]} />
+
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                onPress={() => changeSong(currentSongIndex + 1)}
+                disabled={isBuffering}>
+
+                <FontAwesome5
+                name="forward"
+                style={[styles.secondaryControlIcon, { opacity }]} />
+
+                </TouchableOpacity>
+
+            </View>
         </View>
     </SafeAreaView>
-
    </Modal>
-  )
+  );
 }
