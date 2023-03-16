@@ -3,6 +3,7 @@ import HelloWorld2 from './1-HelloWorld/HelloWorld2';
 import NavigateApp from './10-navigation/NavigateApp';
 import ChatApp from './11-firebase-chat/ChatApp';
 import TodoSqliteApp from './12-todo-with-sqlite/TodoSqliteApp';
+import MusicPlayer from './13-music-player/MusicPlayer';
 import TheLight from './2-the-light/TheLight';
 import TrafficLight from './2-the-light/TrafficLight';
 import FacebookLogin from './3-login-page/FacebookLogin';
@@ -29,5 +30,6 @@ export default function App() {
  //return <NavigateApp />
  //return <ChatApp />
  //return <TrafficLight />
- return <TodoSqliteApp />
+ //return <TodoSqliteApp />
+ return <MusicPlayer />
 }
